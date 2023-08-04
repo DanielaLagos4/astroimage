@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: astroimage
+Version: 0.1
+Summary: Herramienta para procesamiento de imágenes astronómicas
+Home-page: https://github.com/DanielaLagos4/astroimage.git
+Author: Daniela Lagos
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# astroimage
+El paquete AstroImage es una herramienta de procesamiento de imÃ¡genes astronÃ³micas desarrollada en Python. Este paquete proporciona una serie de funciones y mÃ³dulos diseÃ±ados para facilitar tareas comunes en el procesamiento y anÃ¡lisis de imÃ¡genes astronÃ³micas.
+
+astroimage.align
+register_translation
+Esta funciÃ³n utiliza el algoritmo de correlaciÃ³n cruzada para calcular el desplazamiento (traslaciÃ³n) entre dos imÃ¡genes. Es Ãºtil para alinear imÃ¡genes que pueden haber sufrido pequeÃ±os movimientos o desplazamientos entre ellas. La funciÃ³n toma como entrada dos imÃ¡genes image1 y image2 y devuelve las coordenadas shift que representan el desplazamiento requerido para alinear image2 con respecto a image1.
+
+align_images
+Esta funciÃ³n toma una lista de imÃ¡genes y utiliza la funciÃ³n register_translation para alinear todas las imÃ¡genes de la lista con respecto a una imagen de referencia (generalmente la primera imagen de la lista). Devuelve una nueva lista de imÃ¡genes alineadas.
+
+astroimage.stack
+stack_images
+Esta funciÃ³n permite apilar imÃ¡genes astronÃ³micas para mejorar la calidad y aumentar la seÃ±al. Toma una lista de imÃ¡genes y, mediante un mÃ©todo especificado (method='mean' para promedio o method='sum' para suma), combina los valores de pÃ­xeles de las imÃ¡genes para formar una imagen apilada. Es Ãºtil para resaltar caracterÃ­sticas astronÃ³micas dÃ©biles y mejorar la detecciÃ³n de objetos celestiales.
+
+astroimage.noise
+subtract_background
+Esta funciÃ³n toma una imagen y realiza una sustracciÃ³n de fondo para eliminar la contribuciÃ³n del fondo o el ruido de lectura. Se utiliza para reducir el ruido en las imÃ¡genes astronÃ³micas y resaltar objetos celestiales de interÃ©s.
+
+astroimage.contrast
+adjust_contrast
+Esta funciÃ³n ajusta el contraste de una imagen astronÃ³mica utilizando la tÃ©cnica de estiramiento lineal del histograma. Esto resalta los detalles importantes y facilita la visualizaciÃ³n y el anÃ¡lisis de caracterÃ­sticas astronÃ³micas.
+
+astroimage.detection
+detect_objects
+Esta funciÃ³n detecta objetos astronÃ³micos en una imagen utilizando el algoritmo de umbralizaciÃ³n adaptativa y tÃ©cnicas de segmentaciÃ³n. Devuelve una lista de coordenadas que representan la posiciÃ³n de los objetos detectados.
+
+astroimage.measurement
+measure_properties
+Esta funciÃ³n mide las propiedades de los objetos astronÃ³micos detectados en una imagen, como la posiciÃ³n, el brillo y el tamaÃ±o. Utiliza las coordenadas de los objetos obtenidas con la funciÃ³n detect_objects y devuelve una lista de propiedades medidas para cada objeto.
+
+
